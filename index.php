@@ -12,22 +12,23 @@
     <div class="header">
         <div class="container">
             <div class="header-line">
-                <h1 class="h">Домашняя страница</h1>
+                <img src="logo.png" class="logo" height="90px">
                 <a class="nav-item" href="#body">Главная</a>
                 <a class="nav-item" href="#contact">Контакты</a>
             </div>
         </div>    
     </div>
     <div class="header-down">
-        <h1>Система оценки качества работы преподавателя</h1>
-        <h2>Данный проект выполняется студентами Москвоского Политехничесого университета.</h2>
-        <h2>Научный руководитель - Логачёв Максим Сергеевич.</h2>
+        <div class="elements">
+            <h1 id="project_name">Система оценки качества работы преподавателя</h1>
+            <h2>Данный проект выполняется студентами Москвоского Политехничесого университета.</h2>
+            <h2>Научный руководитель - Логачёв Максим Сергеевич.</h2>
+        </div>
     </div>
     <div class="footer">
         <div class="header-line">
-            <p class="foot" id = "email">Почта: </p>
-            <p class="foot" id = "contact">Телефон: </p>
-            <!--<a class="nav" href="communication.php">Обратная связь</a>-->
+            <p class="foot" id = "email">Почта: teaching.analisys@gmail.com</p>
+            <p class="foot" id = "contact">Телефон: 89778030343</p>
         </div>   
     </div>
 </body>  
