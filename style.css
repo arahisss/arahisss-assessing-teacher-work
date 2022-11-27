@@ -1,0 +1,92 @@
+.body{
+    margin: 0;
+}
+
+.container{
+    margin: 0px 45px;
+}
+
+.header{
+    background-color: rgb(93, 107, 146);
+}
+
+.header-line{
+    display: flex;
+    align-items: center;
+}
+
+.h{
+    color: black;
+    margin-right: 50px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.nav-item{
+    color: black;
+    text-decoration: none;
+    margin-right: 25px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.nav{
+    color: black;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10pt;
+    margin-left: 50%;
+}
+
+.autorization{
+    color: black;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 36%;
+}
+
+.nav:hover, .autorization:hover, .nav-item:hover{
+    color: Peru;
+}
+
+.header-down{
+    height: 494px;
+    background-size: 100%;    
+    background-image: url(bg_1.jpg);
+}
+
+.logo{
+    text-align: center;
+    top: 1%;
+}
+
+.footer{
+    background-color: rgb(93, 107, 146);
+}
+
+.foot{
+    margin-left: 50px;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10pt;
+}
+
+.table{
+    position: relative;
+    top: 75%;
+    text-align:center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11pt;
+
+}
+
+caption{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13pt;
+}
+
+.list{
+    position: relative;
+    left: 60px;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12pt;
+}
