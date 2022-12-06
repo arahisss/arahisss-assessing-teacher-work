@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+
+.header {
+    height: 130px;
+    background-color: rgb(93, 107, 146);
+}
+
+
+.container {
+    margin: 0px 45px;
+}
+
+
+.header-line {
+    /*display: flex;*/
+    position: relative;
+    left: 0px;
+}
+
+
+.logo {
+    /*text-align: center;
+    top: 1%;*/
+    position: relative;
+    left: 10px;
+    top: 5px;
+}
+
+
+.nav-item {
+    /*display: flex;*/
+    font-size: 26px;
+    font-weight: 500;
+    position: relative;
+    left: 100px;
+    top: 20px;
+}
+
+
+.project_name { 
+    color: black;
+    margin-right: 50px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.nav-item {
+    color: black;
+    text-decoration: none;
+    margin-right: 25px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.nav:hover, .autorization:hover, .nav-item:hover, .foot:hover {
+    color: white;
+}
+
+
+.header-down {
+    height: 900px;
+    background-size: 100%;    
+    width: 100%;
+    background-image: url(../pictures/bg_1.jpg);
+    position: relative;
+    top: -25px;
+}
+
+
+.elements {
+    position: relative;
+    top: 40px;
+    left: 20px;
+}
+
+
+#project_name {
+    text-align: center;
+}
+
+
+.footer {
+    background-color: rgb(93, 107, 146);
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    top: 980px;
+}
+
+
+.foot {
+    width: 100%;
+    margin-left: 50px;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14pt;
+
+}
+
+
+.down-line {
+    /*display: flex;*/
+    position: relative;
+    left: 0px;
+    top: 20px;
+}
+
+
+#email {
+    position: absolute;
+}
+
+
+#contact {
+    position: absolute;
+    left: 390px;
+}
