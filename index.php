@@ -36,18 +36,26 @@
                 
             ?>
 
+            <table border="2">
+                <tr>
+                    <th>Преподаватель</th>
+                    <th>Индекс Хирша</th>
 
-            <?php 
-                while($teacher = mysqli_fetch_assoc($result)) {
+                </tr>
+                <?php 
+                    while($teacher = mysqli_fetch_assoc($result)) {
+                    ?>  
+                        
+                        <tr>
+                            <td><?php echo ($teacher['name']) ?></td>
+                            <?php include "api.php" ; ?>
+                            
+                        </tr>
+                        
+                    <?php
+                };
                 ?>
-                    <h5>
-                        <?php echo ($teacher['name']) . ' ';
-                        include "api.php" ; ?>
-                    </h5>
-                    
-                <?php
-            };
-            ?>
+            </table>
 
 
            

@@ -81,7 +81,7 @@
 
 
     // print_r($author_request->cited_by->table[1]->h_index->all);
-    print_r($data->cited_by->table[1]->h_index->all);
+    echo '<td>'. $data->cited_by->table[1]->h_index->all. '</td>';
 
 
     ?>
