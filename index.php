@@ -48,7 +48,7 @@
                         
                         <tr>
                             <td><?php echo ($teacher['name']) ?></td>
-                            <?php include "api.php" ; ?>
+                            <td><?php include "api.php" ; ?></td>
                             
                         </tr>
                         

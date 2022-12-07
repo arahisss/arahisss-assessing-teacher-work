@@ -46,7 +46,7 @@
         curl_close($ch);
 
         $author_id = $data->profiles[0]->author_id;
-        echo $author_id;
+
         mysqli_query($connect, "UPDATE `teacher` SET `author_id` = '$author_id' WHERE `name`='$mauthors'; ");
 
     }
@@ -64,24 +64,34 @@
         
 //     // }
 
+    $index_h = $teacher['index_h'];
 
-    $options_author = array(
-        'engine' => 'google_scholar_author',
-        'api_key' => '307f263ee859b4f80787d1279daf1105ab0f7c5bdfd895146bbd35c9444d7760',
-        'author_id' => $author_id
-    );
+    if ($index_h == null) {
+        $options_author = array(
+            'engine' => 'google_scholar_author',
+            'api_key' => '307f263ee859b4f80787d1279daf1105ab0f7c5bdfd895146bbd35c9444d7760',
+            'author_id' => $author_id
+        );
+    
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_URL, $url. '?'. http_build_query($options_author));
+    
+        $response = curl_exec($ch);
+        $data = json_decode($response);
+        curl_close($ch);
 
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_URL, $url. '?'. http_build_query($options_author));
-
-    $response = curl_exec($ch);
-    $data = json_decode($response);
-    curl_close($ch);
+        $index_h = $data->cited_by->table[1]->h_index->all;
+        mysqli_query($connect, "UPDATE `teacher` SET `index_h` = '$index_h' WHERE `name`='$mauthors'; ");
 
 
-    // print_r($author_request->cited_by->table[1]->h_index->all);
-    echo '<td>'. $data->cited_by->table[1]->h_index->all. '</td>';
+    }
+
+    
+
+
+    print_r($index_h);
+    // echo '<td>'. $data->cited_by->table[1]->h_index->all. '</td>';
 
 
     ?>
