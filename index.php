@@ -22,6 +22,7 @@
             </div>
         </div>    
     </div>
+    
     <div class="header-down">
         <div class="elements">
             <h3 id="project_name">Система оценки качества работы преподавателя</h3>
