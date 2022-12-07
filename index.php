@@ -27,7 +27,32 @@
             <h3 id="project_name">Система оценки качества работы преподавателя</h3>
             <h5>Данный проект выполняется студентами Московского Политехнического университета.</h5>
             <h5>Научный руководитель - Логачёв Максим Сергеевич.</h5>
+
+
+            <?php
+                include "db.php";
+                $result = mysqli_query($connect, "SELECT * FROM `teacher`");
+                // echo '<p>'.$result.'</p>';
+                
+            ?>
+
+
+            <?php 
+                while($teacher = mysqli_fetch_assoc($result)) {
+                ?>
+                    <h5>
+                        <?php echo ($teacher['name']) . ' ';
+                        include "api.php" ; ?>
+                    </h5>
+                    
+                <?php
+            };
+            ?>
+
+
+           
         </div>
+
     </div>
     <div class="footer">
         <div class="down-line">
