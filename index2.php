@@ -28,14 +28,6 @@
             <h5>Данный проект выполняется студентами Московского Политехнического университета.</h5>
             <h5>Научный руководитель - Логачёв Максим Сергеевич.</h5>
         </div>
-        <div class = form1>
-            <form action="index2.php" method="post">
-                <p><input name = "name" type="text" placeholder="Введите ФИО преподавателя" size = "50"/></p>
-                <div class = "analyze">
-                    <input type="submit" value="Анализировать" />
-                </div>
-            </form>
-        </div>
     </div>
     <div class="footer">
         <div class="down-line">
