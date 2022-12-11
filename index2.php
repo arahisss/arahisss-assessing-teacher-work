@@ -22,33 +22,25 @@
             </div>
         </div>    
     </div>
-    
     <div class="header-down">
-        <div class="elements">
+        <div class="elements2">
             <h3 id="project_name">Система оценки качества работы преподавателя</h3>
             <h5>Данный проект выполняется студентами Московского Политехнического университета.</h5>
             <h5>Научный руководитель - Логачёв Максим Сергеевич.</h5>
         </div>
 
-        <div class = form1>
-            <form action="index2.php" method="post">
-                <p><input name="name" type="text" placeholder="Введите ФИО преподавателя" size = "50"/></p>
-                <div class = "analyze">
-                    <input type="submit" value="Анализировать" />
-                </div>
-            </form>
+        <div>
+            <?php
+                include "db.php";
+                $result = mysqli_query($connect, "SELECT * FROM `teacher` WHERE `name` = '$_POST[name]'");
+                $teacher = mysqli_fetch_assoc($result);
+            ?>
+
+            <h3><?php echo $teacher['name']; ?></h3>
+            <?php include "api.php" ?>
         </div>
 
-        </div>
-        <div class="footer">
-            <div class="down-line">
-                <p class="foot" id = "email">Почта: teaching.analysis@gmail.com</p>
-                <p class="foot" id = "contact">Телефон: 89778030343</p>
-            </div>   
-        </div>
-
-    
-
+    </div>
     <div class="footer">
         <div class="down-line">
             <p class="foot" id = "email">Почта: teaching.analysis@gmail.com</p>

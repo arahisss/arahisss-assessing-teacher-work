@@ -77,6 +77,10 @@ body {
     left: 20px;
 }
 
+.elements2 {
+    margin-bottom: 20px;
+}
+
 
 #project_name {
     text-align: center;
@@ -118,4 +122,22 @@ body {
 #contact {
     position: absolute;
     left: 390px;
+}
+
+.form1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.2;
+    /*width: 100%;*/
+    background-image: url(f.jpg);
+    background-size: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    position: relative;
+    top: 90px;
+}
+
+.analyze{
+    text-align: center;
 }
