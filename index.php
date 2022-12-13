@@ -52,6 +52,7 @@
         <div class="down-line" id="down-line">
             <p class="foot" id = "email">Почта: teaching.analysis@gmail.com</p>
             <p class="foot" id = "contact">Телефон: 89778030343</p>
+            <p class="foot" id="source">Источник данных: API eLIBRARY.RU</p>
         </div>   
     </div>
 </body>  

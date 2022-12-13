@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="keywords" content="bootstrap, bootstrap4" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="styles/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.0/dist/Chart.min.js"></script>
 	<script src="../dist/chartjs-plugin-doughnutlabel.js"></script>
@@ -42,6 +43,7 @@
             <script>
             'use strict';
             var DEFAULT_COLORS1 = ['#DCDCE0', '#BCC0CD', '#9DA4B9', '#7D87A6', '#5D6B92'];
+            var DEFAULT_COLORS2 = ['#5996F7', '#809FF9', '#A7A8FB', '#CEB0FD', '#F5B9FF'];
             var getTotal = function(myChart) {
                 var sum = myChart.config.data.datasets[0].data.reduce((a, b) => a + b, 0);
                 return `Total: ${sum}`;
@@ -57,7 +59,7 @@
                         //data: [articles[0], articles[1], articles[2], articles[3], articles[4]],
                         //data: [a0, a1, a2, a3, a4],
                         //data: [JSON.stringify()],
-                        backgroundColor: DEFAULT_COLORS1,
+                        backgroundColor: DEFAULT_COLORS2,
                         label: 'Dataset 1'
                     }],
                     labels: ['publForeign', 'publRussian', 'publVAK', 'publTranslated', 'publIF']
@@ -103,7 +105,7 @@
                 data: {
                     datasets: [{
                         data: [1, 2, 3, 4, 5],
-                        backgroundColor: DEFAULT_COLORS1,
+                        backgroundColor: DEFAULT_COLORS2,
                         label: 'Dataset 1'
                     }],
                     labels: ['citForeign', 'citRussian', 'citVAK', 'citTranslated', 'citIF']
@@ -166,6 +168,7 @@
         <div class="down-line" id="down-line2">
             <p class="foot" id = "email">Почта: teaching.analysis@gmail.com</p>
             <p class="foot" id = "contact">Телефон: 89778030343</p>
+            <p class="foot" id="source">Источник данных: API eLIBRARY.RU</p>
         </div>   
     </div>
 </body>  
