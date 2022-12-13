@@ -16,7 +16,6 @@
     <title>Система оценки качества работы преподавателя</title>
 </head>
 <body>
-<?php include("api.php"); ?>
 
     <div class="header">
         <div class="container2">
@@ -27,144 +26,23 @@
             </div>
         </div>    
     </div>
+
     <div class="header-down">
         <div class="elements">
             <h3 class="h3_2" id="project_name">Система оценки качества работы преподавателя</h3>
-            <h5>Данный проект выполняется студентами Московского Политехнического университета.</h5>
-            <h5>Научный руководитель - Логачёв Максим Сергеевич.</h5>
         </div>
-        <div publForeign="" class="diagrams">
-            
-            <div>
-                <canvas id="chart1"></canvas>
-            </div>
-            <div>
-                <canvas id="chart2"></canvas>
-            </div>
-            <!-- скрипт с диаграммами
-            <script>
-            'use strict';
-            var DEFAULT_COLORS1 = ['#DCDCE0', '#BCC0CD', '#9DA4B9', '#7D87A6', '#5D6B92'];
-            var DEFAULT_COLORS2 = ['#5996F7', '#809FF9', '#A7A8FB', '#CEB0FD', '#F5B9FF'];
-            var getTotal = function(myChart) {
-                var sum = myChart.config.data.datasets[0].data.reduce((a, b) => a + b, 0);
-                return `Total: ${sum}`;
-                }
-            var ctx = document.getElementById('chart1').getContext('2d');
-            new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    datasets: [{
-                        data: [1, 2, 3, 4, 5],
-                        //$data_articles = $.parseJSON(data),
-                        //articles = JSON.parse(<?php //$articles ?>),
-                        //data: [articles[0], articles[1], articles[2], articles[3], articles[4]],
-                        //data: [a0, a1, a2, a3, a4],
-                        //data: [JSON.stringify()],
-                        backgroundColor: DEFAULT_COLORS2,
-                        label: 'Dataset 1'
-                    }],
-                    labels: ['publForeign', 'publRussian', 'publVAK', 'publTranslated', 'publIF']
-                },
-                options: {
-                    responsive: true,
-                    legend: {
-                        display: true,
-                        position: 'bottom',
-                        labels: {
-                            color: 'black',
-                            boxWidth: 40,
-                            boxHeight: 40,
-                            padding: 20,
-                        },
-                    },
-                    title: {
-                        display: true,
-                        fontSize: 20,
-                        text: 'Данные о статьях'
-                    },
-                    animation: {
-                        animateScale: true,
-                        animateRotate: true
-                    },
-                    plugins: {
-                        doughnutlabel: {
-                            labels: [
-                                {
-                                    text: 'The title',
-                                    font: {
-                                        size: '60'
-                                    }
-                                },
-                            ]
-                        }
-                    }
-                }
-            });
-            ctx = document.getElementById('chart2').getContext('2d');
-            new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    datasets: [{
-                        data: [1, 2, 3, 4, 5],
-                        backgroundColor: DEFAULT_COLORS2,
-                        label: 'Dataset 1'
-                    }],
-                    labels: ['citForeign', 'citRussian', 'citVAK', 'citTranslated', 'citIF']
-                },
-                options: {
-                    responsive: true,
-                    legend: {
-                        display: true,
-                        position: 'bottom',
-                        labels: {
-                            color: 'black',
-                            boxWidth: 40,
-                            boxHeight: 40,
-                            padding: 20,
-                        },
-                    },
-                    title: {
-                        display: true,
-                        fontSize: 20,
-                        text: 'Данные о цитированиях'
-                    },
-                    animation: {
-                        animateScale: true,
-                        animateRotate: true
-                    },
-                    plugins: {
-                        doughnutlabel: {
-                            labels: [
-                                {
-                                    text: 'This is one line of text',
-                                    font: {
-                                        size: '60',
-                                        family: 'Arial, Helvetica, sans-serif',
-                                        style: 'italic',
-                                        weight: 'bold'
-                                    },
-                                    color: '#bc2c1a'
-                                }
-                            ]
-                        }
-                    }
-                }
-            });
-            </script> -->
-        </div>
-        
-        
+          
         <div id="res_value">
             <?php
                 include "db.php";
                 $result = mysqli_query($connect, "SELECT * FROM `teacher` WHERE `name` = '$_POST[name]'");
                 $teacher = mysqli_fetch_assoc($result);
             ?>
+        <?php include("api.php"); ?>
 
             <h3><?php echo $teacher['name']; ?></h3>
           
-            <h5>Число публикаций в РИНЦ: <?php print_r($numOfItemsFull); ?></h5>
+            <h5>Число публикаций в РИНЦ: <?php echo $numOfItemsFull; ?></h5>
             <h5>Число публикаций, входящих в ядро РИНЦ: <?php echo $numOfCoreItems; ?></h5>
             <h5>Индекс Хирша по публикациям в РИНЦ: <?php echo $hirschs; ?></h5>
             <h5>Индекс Хирша по ядру РИНЦ: <?php echo $hirschCore; ?></h5>
@@ -173,6 +51,21 @@
             <h5>Среднее число цитирований в расчете на одну публикацию: <?php echo $avgCited; ?></h5>
             <h5>Число публикаций в РИНЦ за последние 5 лет (2017-2021): <?php echo $publ5; ?></h5>
         </div>
+
+        <div class="diagrams">
+            
+            <div class="articles" publForeign="<?= $articles['publForeign']?>" publRussian="<?= $articles['publRussian']?>"
+            publVAK="<?= $articles['publVAK']?>" publTranslated="<?= $articles['publTranslated']?>" publIF="<?= $articles['publIF']?>" >
+                <canvas id="chart1"></canvas>
+            </div>
+
+            <div class="citations" citForeign="<?= $citations['citForeign']?>" citRussian="<?= $citations['citRussian']?>"
+            citVAK="<?= $citations['citVAK']?>" citTranslated="<?= $citations['citTranslated']?>" citIF="<?= $citations['citIF']?>">
+                <canvas id="chart2"></canvas>
+            </div>
+           
+        </div>
+        
 
     </div>
     <div class="footer2">

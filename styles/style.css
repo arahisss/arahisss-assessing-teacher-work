@@ -2,6 +2,8 @@
 body {
     margin: 0;
     overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 
@@ -65,6 +67,7 @@ body {
 
 .nav:hover, .autorization:hover, .nav-item:hover, .foot:hover {
     color: white;
+    transition: 0.3s;
 }
 
 .header-down {
@@ -104,6 +107,8 @@ body {
     margin-top: 40px;
     left: 20px;
     top: 120px;
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 
@@ -160,7 +165,8 @@ body {
 }
 
 .form1 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+
     font-size: 16px;
     line-height: 1.2;
     /*width: 100%;*/
@@ -176,4 +182,26 @@ body {
 .analyze{
     text-align: center;
     font-family: 'Montserrat', sans-serif;
+}
+
+#input-name {
+    padding: 5px;
+    border-radius: 7px;
+    border: 1px solid #000;
+
+}
+
+#form-button {
+    margin-top: 10px;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+#form-button:hover {
+    background-color: rgba(255, 255, 255, 0.41);
+    transition: 0.3s;
+
 }

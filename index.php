@@ -26,14 +26,14 @@
         <div class="elements">
             <h3 id="project_name">Система оценки качества работы преподавателя</h3>
             <h5>Данный проект выполняется студентами Московского Политехнического университета.</h5>
-            <h5>Научный руководитель - Логачёв Максим Сергеевич.</h5>
+            <h5>Научные руководители - Логачёв Максим Сергеевич, Чернова Вера Михайловна</h5>
         </div>
 
         <div class = form1>
             <form action="index2.php" method="post">
-                <p><input name="name" type="text" placeholder="Введите ФИО преподавателя" size = "50"/></p>
+                <p><input id="input-name" name="name" type="text" placeholder="Введите ФИО преподавателя" size = "50"/></p>
                 <div class = "analyze">
-                    <input type="submit" value="Анализировать" />
+                    <input id="form-button" type="submit" value="Анализировать" />
                 </div>
             </form>
         </div>

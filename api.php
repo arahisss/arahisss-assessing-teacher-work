@@ -78,15 +78,16 @@ $json = json_encode($xml);
 $data = json_decode($json, true);
 
 
-// $numOfItemsFull = $data['author']['@attributes']['numOfItemsFull'];
-// $numOfCoreItems = $data['author']['@attributes']['numOfCoreItems'];
-// $hirschs = $data['author']['@attributes']['hirschs'];
-// $hirschCore = $data['author']['@attributes']['hirschCore'];
-// $citedFull = $data['author']['@attributes']['citedFull'];
-// $coreCited = $data['author']['@attributes']['coreCited'];
-// $avgCited = $data['author']['@attributes']['avgCited'];
-// $publ5 = $data['author']['@attributes']['publ5'];
+$numOfItemsFull = $data['author']['@attributes']['numOfItemsFull'];
+$numOfCoreItems = $data['author']['@attributes']['numOfCoreItems'];
+$hirschs = $data['author']['@attributes']['hirschs'];
+$hirschCore = $data['author']['@attributes']['hirschCore'];
+$citedFull = $data['author']['@attributes']['citedFull'];
+$coreCited = $data['author']['@attributes']['coreCited'];
+$avgCited = $data['author']['@attributes']['avgCited'];
+$publ5 = $data['author']['@attributes']['publ5'];
 
+// header("Location: index2.php?numOfItemsFull=$numOfItemsFull");
 
 // Массив с данными о статьях
 $articles = array(
@@ -96,12 +97,7 @@ $articles = array(
     'publTranslated' => $data['author']['@attributes']['publTranslated'],
     'publIF' => $data['author']['@attributes']['publIF']
 );
-$publForeign = $articles['publForeign'];
-$publRussian = $articles['publRussian'];
-$publVAK = $articles['publVAK'];
-$publTranslated = $articles['publTranslated'];
-$publIF = $articles['publIF'];
-//echo json_encode($articles);
+
 
 // Массив с данными о цитированиях
 $citations = array(
@@ -111,16 +107,5 @@ $citations = array(
     'citTranslated' => $data['author']['@attributes']['citTranslated'],
     'citIF' => $data['author']['@attributes']['citIF']
 );
-$citForeign = $citations['citForeign'];
-$citRussian = $citations['citRussian'];
-$citVAK = $citations['citVAK'];
-$citTranslated = $citations['citTranslated'];
-$citIF = $citations['citIF'];
-//echo "wew ".$citIF;
-
-// foreach ($citations as $i) {
-//     echo $i . '<br>';
-// }
-
 
 ?>
