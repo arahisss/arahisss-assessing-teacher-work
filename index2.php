@@ -15,6 +15,8 @@
     <title>Система оценки качества работы преподавателя</title>
 </head>
 <body>
+<?php include("api.php"); ?>
+
     <div class="header">
         <div class="container2">
             <div class="header-line">
@@ -30,7 +32,7 @@
             <h5>Данный проект выполняется студентами Московского Политехнического университета.</h5>
             <h5>Научный руководитель - Логачёв Максим Сергеевич.</h5>
         </div>
-        <div class="diagrams">
+        <div publForeign="" class="diagrams">
             
             <div>
                 <canvas id="chart1"></canvas>
@@ -38,7 +40,7 @@
             <div>
                 <canvas id="chart2"></canvas>
             </div>
-            <!-- скрипт с диаграммами-->
+            <!-- скрипт с диаграммами
             <script>
             'use strict';
             var DEFAULT_COLORS1 = ['#DCDCE0', '#BCC0CD', '#9DA4B9', '#7D87A6', '#5D6B92'];
@@ -147,9 +149,10 @@
                     }
                 }
             });
-            </script>
+            </script> -->
         </div>
-
+        
+        
         <div id="res_value">
             <?php
                 include "db.php";
@@ -158,7 +161,15 @@
             ?>
 
             <h3><?php echo $teacher['name']; ?></h3>
-            <?php include "api.php" ?>
+          
+            <h5>Число публикаций в РИНЦ: <?php print_r($numOfItemsFull); ?></h5>
+            <h5>Число публикаций, входящих в ядро РИНЦ: <?php echo $numOfCoreItems; ?></h5>
+            <h5>Индекс Хирша по публикациям в РИНЦ: <?php echo $hirschs; ?></h5>
+            <h5>Индекс Хирша по ядру РИНЦ: <?php echo $hirschCore; ?></h5>
+            <h5>Число цитирований из публикаций, входящих в РИНЦ: <?php echo $citedFull; ?></h5>
+            <h5>Число цитирований из публикаций, входящих в ядро РИНЦ: <?php echo $coreCited; ?></h5>
+            <h5>Среднее число цитирований в расчете на одну публикацию: <?php echo $avgCited; ?></h5>
+            <h5>Число публикаций в РИНЦ за последние 5 лет (2017-2021): <?php echo $publ5; ?></h5>
         </div>
 
     </div>
@@ -169,5 +180,5 @@
         </div>   
     </div>
 </body>  
-<!--<script type="text/javascript" src="js_files/diagrams.js"></script>-->
+<script type="text/javascript" src="js_files/diagrams.js"></script>
 </html>

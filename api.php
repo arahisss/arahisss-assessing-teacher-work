@@ -78,26 +78,15 @@ $json = json_encode($xml);
 $data = json_decode($json, true);
 
 
-$numOfItemsFull = $data['author']['@attributes']['numOfItemsFull'];
-$numOfCoreItems = $data['author']['@attributes']['numOfCoreItems'];
-$hirschs = $data['author']['@attributes']['hirschs'];
-$hirschCore = $data['author']['@attributes']['hirschCore'];
-$citedFull = $data['author']['@attributes']['citedFull'];
-$coreCited = $data['author']['@attributes']['coreCited'];
-$avgCited = $data['author']['@attributes']['avgCited'];
-$publ5 = $data['author']['@attributes']['publ5'];
+// $numOfItemsFull = $data['author']['@attributes']['numOfItemsFull'];
+// $numOfCoreItems = $data['author']['@attributes']['numOfCoreItems'];
+// $hirschs = $data['author']['@attributes']['hirschs'];
+// $hirschCore = $data['author']['@attributes']['hirschCore'];
+// $citedFull = $data['author']['@attributes']['citedFull'];
+// $coreCited = $data['author']['@attributes']['coreCited'];
+// $avgCited = $data['author']['@attributes']['avgCited'];
+// $publ5 = $data['author']['@attributes']['publ5'];
 
-
-?>
-    <h5>Число публикаций в РИНЦ: <?php echo $numOfItemsFull; ?></h5>
-    <h5>Число публикаций, входящих в ядро РИНЦ: <?php echo $numOfCoreItems; ?></h5>
-    <h5>Индекс Хирша по публикациям в РИНЦ: <?php echo $hirschs; ?></h5>
-    <h5>Индекс Хирша по ядру РИНЦ: <?php echo $hirschCore; ?></h5>
-    <h5>Число цитирований из публикаций, входящих в РИНЦ: <?php echo $citedFull; ?></h5>
-    <h5>Число цитирований из публикаций, входящих в ядро РИНЦ: <?php echo $coreCited; ?></h5>
-    <h5>Среднее число цитирований в расчете на одну публикацию: <?php echo $avgCited; ?></h5>
-    <h5>Число публикаций в РИНЦ за последние 5 лет (2017-2021): <?php echo $publ5; ?></h5>
-<?php
 
 // Массив с данными о статьях
 $articles = array(
