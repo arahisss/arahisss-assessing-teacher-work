@@ -18,11 +18,10 @@
             <div class="header-line">
                 <img src="pictures/logo.png" class="logo" height="90px">
                 <a class="nav-item" href="#body">Главная</a>
-                <a class="nav-item" href="#contact">Контакты</a>
+                <a class="nav-item" href="#down-line">Контакты</a>
             </div>
         </div>    
     </div>
-    
     <div class="header-down">
         <div class="elements">
             <h3 id="project_name">Система оценки качества работы преподавателя</h3>
@@ -50,7 +49,7 @@
     
 
     <div class="footer">
-        <div class="down-line">
+        <div class="down-line" id="down-line">
             <p class="foot" id = "email">Почта: teaching.analysis@gmail.com</p>
             <p class="foot" id = "contact">Телефон: 89778030343</p>
         </div>   

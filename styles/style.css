@@ -5,20 +5,26 @@ body {
 
 
 .header {
-    height: 130px;
     background-color: rgb(93, 107, 146);
 }
 
 
 .container {
     margin: 0px 45px;
+    height: 130px;
 }
+
+.container2 {
+    margin: 0px 45px;
+    height: 130px;
+}
+
 
 
 .header-line {
     /*display: flex;*/
-    position: relative;
-    left: 0px;
+    position: absolute;
+    left: 50px;
 }
 
 
@@ -60,9 +66,8 @@ body {
     color: white;
 }
 
-
 .header-down {
-    height: 900px;
+    height: 1000px;
     background-size: 100%;    
     width: 100%;
     background-image: url(../pictures/bg_1.jpg);
@@ -77,8 +82,26 @@ body {
     left: 20px;
 }
 
-.elements2 {
+.diagrams {
+    width: 800px;
+	margin: auto;
+	padding: 16px 32px;
+    /*position: absolute;
+    left: 800px;
+    top: 10px;*/
+    position: relative;
+    left: 300px;
+    top: 60px;
+}
+#chart1 {
     margin-bottom: 20px;
+}
+
+#res_value {
+    position: absolute;
+    margin-top: 40px;
+    left: 20px;
+    top: 120px;
 }
 
 
@@ -92,9 +115,15 @@ body {
     width: 100%;
     height: 70px;
     position: absolute;
-    top: 980px;
+    top: 1100px;
 }
-
+.footer2 {
+    background-color: rgb(93, 107, 146);
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    top: 1100px;
+}
 
 .foot {
     width: 100%;

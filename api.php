@@ -107,6 +107,12 @@ $articles = array(
     'publTranslated' => $data['author']['@attributes']['publTranslated'],
     'publIF' => $data['author']['@attributes']['publIF']
 );
+$publForeign = $articles['publForeign'];
+$publRussian = $articles['publRussian'];
+$publVAK = $articles['publVAK'];
+$publTranslated = $articles['publTranslated'];
+$publIF = $articles['publIF'];
+//echo json_encode($articles);
 
 // Массив с данными о цитированиях
 $citations = array(
@@ -116,6 +122,12 @@ $citations = array(
     'citTranslated' => $data['author']['@attributes']['citTranslated'],
     'citIF' => $data['author']['@attributes']['citIF']
 );
+$citForeign = $citations['citForeign'];
+$citRussian = $citations['citRussian'];
+$citVAK = $citations['citVAK'];
+$citTranslated = $citations['citTranslated'];
+$citIF = $citations['citIF'];
+//echo "wew ".$citIF;
 
 // foreach ($citations as $i) {
 //     echo $i . '<br>';
