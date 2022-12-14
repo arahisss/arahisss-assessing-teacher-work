@@ -33,7 +33,7 @@
             <form action="index2.php" method="post">
                 <p><input id="input-name" name="name" type="text" placeholder="Введите ФИО преподавателя" size = "50"/></p>
                 <div class = "analyze">
-                    <input class="custom-btn analyze-button" id="form-button" type="submit" value="Анализировать" />
+                    <button type="submit" id="form-button" class="custom-btn button1"><span>Анализировать</span></button>
                 </div>
             </form>
         </div>

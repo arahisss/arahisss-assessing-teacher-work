@@ -205,26 +205,20 @@ body {
 }
 */
 
-.analyze{
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
+.analyze {
     width: 90%;
     margin: 40px auto;
     text-align: center;
-}
-
-input {
-    margin: 20px;
-}
-
-.custom-btn {
-    width: 130px;
+  }
+  
+  .custom-btn {
+    width: 200px;
     height: 40px;
-    color: #fff;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
     border-radius: 5px;
     padding: 10px 25px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     background: transparent;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -236,80 +230,71 @@ input {
     outline: none;
   }
   
-
-
-
-
-.analyze-button {
-    background-color: #f0ecfc;
-  background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 74%);
+  .button1 {
+    background-color: #C0C4FB;
+  background-image: linear-gradient(315deg, #5996F7 0%, #F5B9FF 74%);
     line-height: 42px;
     padding: 0;
     border: none;
   }
-  .analyze-button input {
+  .button1 span {
     position: relative;
     display: block;
     width: 100%;
     height: 100%;
   }
-  .analyze-button:before,
-  .analyze-button:after {
+  .button1:before,
+  .button1:after {
     position: absolute;
     content: "";
     right: 0;
     bottom: 0;
-    background: #c797eb;
-    /*box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
-                -4px -4px 6px 0 rgba(116, 125, 136, .2), 
-      inset -4px -4px 6px 0 rgba(255,255,255,.5),
-      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);*/
-    transition: all 0.3s ease;
+    background: #5996F7;
+    transition: all 0.6s ease;
   }
-  .analyze-button:before{
+  .button1:before{
      height: 0%;
      width: 2px;
   }
-  .analyze-button:after {
+  .button1:after {
     width: 0%;
     height: 2px;
   }
-  .analyze-button:hover:before {
+  .button1:hover:before {
     height: 100%;
   }
-  .analyze-button:hover:after {
+  .button1:hover:after {
     width: 100%;
   }
-  .analyze-button:hover{
+  .button1:hover{
     background: transparent;
   }
-  .analyze-button input:hover{
-    color: #c797eb;
+  .button1 span:hover{
+    color: #CEB0FD;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
   }
-  .analyze-button input:before,
-  .analyze-button input:after {
+  .button1 span:before,
+  .button1 span:after {
     position: absolute;
     content: "";
     left: 0;
     top: 0;
-    background: #c797eb;
-    /*box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
-                -4px -4px 6px 0 rgba(116, 125, 136, .2), 
-      inset -4px -4px 6px 0 rgba(255,255,255,.5),
-      inset 4px 4px 6px 0 rgba(116, 125, 136, .3);*/
-    transition: all 0.3s ease;
+    background: #F5B9FF;
+    transition: all 0.6s ease;
   }
-  .analyze-button input:before {
+  .button1 span:before {
     width: 2px;
     height: 0%;
   }
-  .analyze-button input:after {
+  .button1 span:after {
     height: 2px;
     width: 0%;
   }
-  .analyze-button input:hover:before {
+  .button1 span:hover:before {
     height: 100%;
   }
-  .analyze-button input:hover:after {
+  .button1 span:hover:after {
     width: 100%;
   }
+    
