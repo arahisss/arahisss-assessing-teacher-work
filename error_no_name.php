@@ -17,24 +17,17 @@
         <div class="container">
             <div class="header-line">
                 <img src="pictures/logo.png" class="logo" height="90px">
-                <a class="nav-item" href="#body">Главная</a>
+                <a class="nav-item" href="index.php">Главная</a>
                 <a class="nav-item" href="#down-line">Контакты</a>
             </div>
         </div>    
     </div>
     <div class="header-down">
         <div class="elements">
-            <h3 id="project_name">Система оценки качества работы преподавателя</h3>
-            <h5>Данный проект выполняется студентами Московского Политехнического университета.</h5>
-            <h5>Научные руководители - Логачёв Максим Сергеевич, Чернова Вера Михайловна</h5>
-        </div>
-        <div class = form1>
-            <form action="index2.php" method="post">
-                <p><input id="input-name" name="name" type="text" placeholder="Введите ФИО преподавателя" size = "50"/></p>
-                <div class = "analyze">
-                    <button type="submit" id="form-button" class="custom-btn button1"><span>Анализировать</span></button>
-                </div>
-            </form>
+            <h5>Такой преподаватель отсутствует в базе данных. Введите имя еще раз.</h5>
+            <div class = "analyze">
+                    <a href="index.php"><button type="button" id="form-button" class="custom-btn button1"><span>На главную</span></button></a>
+            </div>
         </div>
     </div>
     <div class="footer">

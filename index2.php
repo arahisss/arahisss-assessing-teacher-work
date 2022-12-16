@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset = "UTF-8">
+    <link rel="stylesheet/less" type="text/css" href="styles/preloader.less">
     <link rel = 'stylesheet' href = 'styles/style.css'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +17,32 @@
     <title>Система оценки качества работы преподавателя</title>
 </head>
 <body>
+    
+    <!--для прелоадера
+    <div class="center">
+        <div class="loader blur">
+            <script src="js_files/preloader.js"></script>
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+        </div>
+    </div>-->
+
+    <!--
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="955 0 44 44">
+    <svg x="955" stroke="#000">
+        <g fill="none" fill-rule="evenodd" stroke-width="2">
+        <circle cx="22" cy="22" r="1">
+            <animate attributeName="r" begin="0s" calcMode="spline" dur="1.8s" keySplines="0.165, 0.84, 0.44, 1" keyTimes="0; 1" repeatCount="indefinite" values="1; 20" begin="3s;op.end+3s" />
+            <animate attributeName="stroke-opacity" begin="0s" calcMode="spline" dur="1.8s" keySplines="0.3, 0.61, 0.355, 1" keyTimes="0; 1" repeatCount="3" values="1; 0" begin="3s;op.end+3s" />
+        </circle>
+        <circle cx="22" cy="22" r="1">
+            <animate attributeName="r" begin="-0.9s" calcMode="spline" dur="1.8s" keySplines="0.165, 0.84, 0.44, 1" keyTimes="0; 1" repeatCount="indefinite" values="1; 20" begin="3s;op.end+3s" />
+            <animate attributeName="stroke-opacity" begin="-0.9s" calcMode="spline" dur="1.8s" keySplines="0.3, 0.61, 0.355, 1" keyTimes="0; 1" repeatCount="indefinite" values="1; 0" begin="3s;op.end+3s" />
+        </circle>
+        </g>
+    </svg>
+    </svg>-->
+
 
     <div class="header">
         <div class="container2">
@@ -26,22 +53,26 @@
             </div>
         </div>    
     </div>
-
     <div class="header-down">
         <div class="elements">
             <h3 class="h3_2" id="project_name">Система оценки качества работы преподавателя</h3>
         </div>
-          
         <div id="res_value">
             <?php
                 include "db.php";
+                //$result = mysqli_query($connect, "SELECT * FROM `teacher` WHERE `name` = '$_POST[name]'");
+                //$teacher = mysqli_fetch_assoc($result);
                 $result = mysqli_query($connect, "SELECT * FROM `teacher` WHERE `name` = '$_POST[name]'");
-                $teacher = mysqli_fetch_assoc($result);
+                if (mysqli_num_rows($result) == 1) { 
+                    $teacher = mysqli_fetch_assoc($result);
+                }
+                else {
+                    echo '<script>location.replace("error_no_name.php");</script>'; exit;
+                    //echo "no users with this name";
+                }
             ?>
         <?php include("api.php"); ?>
-
             <h3><?php echo $teacher['name']; ?></h3>
-          
             <h5>Число публикаций в РИНЦ: <?php echo $numOfItemsFull; ?></h5>
             <h5>Число публикаций, входящих в ядро РИНЦ: <?php echo $numOfCoreItems; ?></h5>
             <h5>Индекс Хирша по публикациям в РИНЦ: <?php echo $hirschs; ?></h5>
@@ -51,28 +82,22 @@
             <h5>Среднее число цитирований в расчете на одну публикацию: <?php echo $avgCited; ?></h5>
             <h5>Число публикаций в РИНЦ за последние 5 лет (2017-2021): <?php echo $publ5; ?></h5>
         </div>
-
         <div class="diagrams">
-            
             <div class="articles" publForeign="<?= $articles['publForeign']?>" publRussian="<?= $articles['publRussian']?>"
             publVAK="<?= $articles['publVAK']?>" publTranslated="<?= $articles['publTranslated']?>" publIF="<?= $articles['publIF']?>" >
                 <canvas id="chart1"></canvas>
             </div>
-
             <div class="citations" citForeign="<?= $citations['citForeign']?>" citRussian="<?= $citations['citRussian']?>"
             citVAK="<?= $citations['citVAK']?>" citTranslated="<?= $citations['citTranslated']?>" citIF="<?= $citations['citIF']?>">
                 <canvas id="chart2"></canvas>
-            </div>
-           
+            </div> 
         </div>
-        
-
     </div>
     <div class="footer2">
         <div class="down-line" id="down-line2">
             <p class="foot" id = "email">Почта: teaching.analysis@gmail.com</p>
             <p class="foot" id = "contact">Телефон: 89778030343</p>
-            <p class="foot" id="source">Источник данных: API eLIBRARY.RU</p>
+            <a class="foot" id="source" href="https://elibrary.ru/">Источник данных: API eLIBRARY.RU</p>
         </div>   
     </div>
 </body>  
