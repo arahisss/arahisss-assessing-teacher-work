@@ -1,0 +1,35 @@
+@bg-color: #1b1941;
+@circle-radius: 50px;
+@circle-one: #ffc300;
+@circle-two: #ff004b;
+
+body {
+  background-color: @bg-color;
+}
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.circle {
+  width: @circle-radius;
+  height: @circle-radius;
+  background-color: #fff;
+  display: inline-block;
+  border-radius: 50%;
+  margin: 0 (@circle-radius / 3);
+  box-shadow: 0 -5px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.circle-1 {
+  background-color: @circle-one;
+  background: linear-gradient(tint(@circle-one, -100%), tint(@circle-one, 20%));
+}
+
+.circle-2 {
+  background-color: @circle-two;
+  background: linear-gradient(tint(@circle-two, -10%), tint(@circle-two, 30%));
+}

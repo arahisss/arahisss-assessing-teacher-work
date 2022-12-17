@@ -107,5 +107,3 @@ $citations = array(
     'citTranslated' => $data['author']['@attributes']['citTranslated'],
     'citIF' => $data['author']['@attributes']['citIF']
 );
-
-?>

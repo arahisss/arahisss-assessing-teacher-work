@@ -1,10 +1,10 @@
 'use strict';
 var DEFAULT_COLORS1 = ['#DCDCE0', '#BCC0CD', '#9DA4B9', '#7D87A6', '#5D6B92'];
 var DEFAULT_COLORS2 = ['#5996F7', '#809FF9', '#A7A8FB', '#CEB0FD', '#F5B9FF'];
-var getTotal = function(myChart) {
+var getTotal = function (myChart) {
     var sum = myChart.config.data.datasets[0].data.reduce((a, b) => a + b, 0);
     return `Total: ${sum}`;
-    }
+}
 var ctx = document.getElementById('chart1').getContext('2d');
 
 new Chart(ctx, {
@@ -12,10 +12,10 @@ new Chart(ctx, {
     data: {
         datasets: [{
             data: [document.querySelector('.articles').getAttribute('publForeign'),
-                document.querySelector('.articles').getAttribute('publRussian'),
-                document.querySelector('.articles').getAttribute('publVAK'),
-                document.querySelector('.articles').getAttribute('publTranslated'),
-                document.querySelector('.articles').getAttribute('publIF'),
+            document.querySelector('.articles').getAttribute('publRussian'),
+            document.querySelector('.articles').getAttribute('publVAK'),
+            document.querySelector('.articles').getAttribute('publTranslated'),
+            document.querySelector('.articles').getAttribute('publIF'),
             ],
             backgroundColor: DEFAULT_COLORS2,
             label: 'Dataset 1'
@@ -26,7 +26,7 @@ new Chart(ctx, {
         responsive: true,
         legend: {
             display: true,
-            position: 'bottom',
+            position: 'right',
             align: 'start',
             labels: {
                 color: 'black',
@@ -58,6 +58,7 @@ new Chart(ctx, {
         }
     }
 });
+
 ctx = document.getElementById('chart2').getContext('2d');
 new Chart(ctx, {
     type: 'doughnut',
@@ -71,15 +72,30 @@ new Chart(ctx, {
                 document.querySelector('.citations').getAttribute('citIF'),
             ],
             backgroundColor: DEFAULT_COLORS2,
-            label: 'Dataset 1'
+            label: 'Dataset 2'
         }],
         labels: ['Цитирования из зарубежных журналов', 'Цитирования из российских журналов', 'Цитирования из российских журналов из перечня ВАК', 'Цитирования из российских переводных журналов', 'Цитирования из журналов с ненулевым импакт-фактором']
     },
     options: {
         responsive: true,
-        legend: {
+        legend:    /*false,
+        legendCallback: function(chart) {
+            let legendHtml = [];
+            legendHtml.push('<ul>');
+            let item = chart.data.datasets[0];
+            for (let i=0; i < 5; i++) {
+                legendHtml.push('<li>');
+                legendHtml.push('<span class="chart-legend" style="background-color:' + item.Chart.DEFAULT_COLORS2[i] +'"></span>');
+                legendHtml.push('<span class="chart-legend-label-text">' + chart.data.labels[i] + '</span>');
+                legendHtml.push('</li>');
+            }
+
+            legendHtml.push('</ul>');
+            return legendHtml.join("");
+        },*/
+        {
             display: true,
-            position: 'bottom',
+            position: 'right',
             labels: {
                 color: 'black',
                 boxWidth: 40,
@@ -87,6 +103,7 @@ new Chart(ctx, {
                 padding: 20,
             },
         },
+
         title: {
             display: true,
             fontSize: 20,
