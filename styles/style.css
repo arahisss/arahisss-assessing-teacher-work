@@ -201,22 +201,17 @@ body {
 
 }
 
-/*
-#form-button {
-    margin-top: 10px;
-    background-color: transparent;
-    outline: none;
-    border: 1px solid #000;
-    padding: 10px;
-    border-radius: 7px;
+.pdf-buttons {
+    position: relative;
+    top: 80px;
+    margin-left: 20px;
+    line-height: 4px;
+}
+#current_btn, #all_btn {
+    height: 80px;
+    width: 220px;
 }
 
-#form-button:hover {
-    background-color: rgba(255, 255, 255, 0.41);
-    transition: 0.3s;
-
-}
-*/
 
 .analyze {
   width: 90%;

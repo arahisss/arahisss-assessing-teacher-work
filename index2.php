@@ -68,6 +68,10 @@
                 <canvas id="chart2"></canvas>
             </div>
         </div>
+        <div class="pdf-buttons">
+            <a href="fpdf/report_current.php"><button type="button" id="current_btn" class="custom-btn button1"><span>pdf: Сведения о преподавателе</span></button></a>
+            <a href="fpdf/report_all.php"><button type="button" id="all_btn" class="custom-btn button1"><span>pdf: Сведения обо всех преподавателях</span></button></a>
+        </div>
     </div>
     <div class="footer2">
         <div class="down-line" id="down-line2">

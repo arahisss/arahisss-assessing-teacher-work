@@ -2,10 +2,11 @@
 
 include "dp.php";
 
-function request_EL($url, $options) {
+function request_EL($url, $options)
+{
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_URL, $url. '?'. http_build_query($options));
+    curl_setopt($ch, CURLOPT_URL, $url . '?' . http_build_query($options));
 
     $response = curl_exec($ch);
     curl_close($ch);
@@ -13,8 +14,8 @@ function request_EL($url, $options) {
     return $response;
 }
 
-$url = 'http://elibrary.ru/projects/API-NEB/API_NEB.aspx';   
-        
+$url = 'http://elibrary.ru/projects/API-NEB/API_NEB.aspx';
+
 // ordid = 14985 это идентификатор политеха
 // $options = array(
 //     'ucode' => 'aae88eb8-a470-ed11-8ec7-000af73d0592',
@@ -60,7 +61,7 @@ $url = 'http://elibrary.ru/projects/API-NEB/API_NEB.aspx';
 // }
 
 // if ($teacher['author_id'] != null) {
-    
+
 // }
 
 
