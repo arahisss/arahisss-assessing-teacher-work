@@ -55,11 +55,11 @@ $pdf->Cell(100, 10, 'Report about the teacher', 1, 1, 'C', 0);
 
 $pdf->SetFontSize(14);
 
-define('FPDF_FONTPATH',"fpdf/font/");
-$str = "Московский политехнический университет";
+define('FPDF_FONTPATH', "fpdf/font/");
+//$str = "Московский политехнический университет";
 //$str = iconv('UTF-8', 'cp1252', $str);
 $pdf->SetXY(50, 40);
-$pdf->Cell(100, 10, iconv('UTF-8', 'windows-1251', "Московский политехнический университет"), 0, 1, 'C', 0);
+//$pdf->Cell(100, 10, iconv('UTF-8', 'windows-1251', "Московский политехнический университет"), 0, 1, 'C', 0);
 $pdf->SetXY(50, 60);
 $pdf->Cell(100, 10, 'CURRENT TEACHER', 0, 1, 'C', 0);
 
